@@ -33,14 +33,14 @@ Partial Class frmLogin
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(75, 129)
+        Me.TextBox1.Location = New System.Drawing.Point(75, 120)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(276, 20)
         Me.TextBox1.TabIndex = 0
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(75, 175)
+        Me.TextBox2.Location = New System.Drawing.Point(75, 162)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(276, 20)
         Me.TextBox2.TabIndex = 1
@@ -48,9 +48,9 @@ Partial Class frmLogin
         'Button1
         '
         Me.Button1.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(87, 223)
+        Me.Button1.Location = New System.Drawing.Point(87, 207)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.Size = New System.Drawing.Size(75, 21)
         Me.Button1.TabIndex = 2
         Me.Button1.Text = "Log In"
         Me.Button1.UseVisualStyleBackColor = True
@@ -59,7 +59,7 @@ Partial Class frmLogin
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(31, 132)
+        Me.Label1.Location = New System.Drawing.Point(31, 123)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(19, 13)
         Me.Label1.TabIndex = 3
@@ -69,7 +69,7 @@ Partial Class frmLogin
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(12, 178)
+        Me.Label2.Location = New System.Drawing.Point(12, 165)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(55, 13)
         Me.Label2.TabIndex = 4
@@ -79,7 +79,7 @@ Partial Class frmLogin
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Times New Roman", 18.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(130, 35)
+        Me.Label3.Location = New System.Drawing.Point(130, 32)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(166, 28)
         Me.Label3.TabIndex = 5
@@ -90,7 +90,7 @@ Partial Class frmLogin
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Times New Roman", 8.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label4.Location = New System.Drawing.Point(174, 77)
+        Me.Label4.Location = New System.Drawing.Point(174, 71)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(63, 14)
         Me.Label4.TabIndex = 6
@@ -98,10 +98,10 @@ Partial Class frmLogin
         '
         'frmLogin
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 14.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Aqua
-        Me.ClientSize = New System.Drawing.Size(391, 306)
+        Me.ClientSize = New System.Drawing.Size(391, 284)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
