@@ -1,7 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Module BasicModule
-    Public strConn, testConn As String
+    Public strConn, testConn, username As String
 
     Public Function getStrConn() As String
         Try

@@ -14,7 +14,7 @@
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim isUserValid As Boolean
-        Dim username, password, getUser As String
+        Dim password, getUser As String
 
         username = txtUsername.Text
         password = txtPassword.Text
@@ -24,6 +24,7 @@
 
             If getUser <> "" Then
                 frmHome.Show()
+                Me.Close()
             Else
                 MsgBox("Username atau Password Salah!")
             End If
