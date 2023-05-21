@@ -5,7 +5,7 @@ Module BasicModule
 
     Public Function getStrConn() As String
         Try
-            strConn = "server=127.0.0.1;uid=root;pwd=;database=sekolah"
+            strConn = "server=127.0.0.1;uid=root;pwd=;database=kasir"
         Catch ex As Exception
             MsgBox(ex)
         End Try
@@ -34,12 +34,16 @@ Module BasicModule
         Dim cmd As New MySqlCommand("", connection)
         Dim adapter As New MySqlDataAdapter
         Dim ds As New DataSet
-        If (connection.State = ConnectionState.Open) Then
-            connection.Close()
-        End If
-        connection.Open()
-        cmd.CommandText = sql
-        Return cmd.ExecuteScalar()
+        Try
+            If (connection.State = ConnectionState.Open) Then
+                connection.Close()
+            End If
+            connection.Open()
+            cmd.CommandText = sql
+            Return cmd.ExecuteScalar()
+        Catch ex As Exception
+            MsgBox(ex)
+        End Try
         connection.Close()
     End Function
 
