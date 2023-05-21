@@ -14,15 +14,15 @@
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim isUserValid As Boolean
-        Dim password, getUser As String
+        Dim password As String
 
         username = txtUsername.Text
         password = txtPassword.Text
 
         If username <> "" Or password <> "" Then
-            getUser = execScalar($"SELECT * FROM user WHERE username = '{username}' and password = '{password}'", strConn)
+            getUserRole = execScalar($"SELECT role FROM user WHERE username = '{username}' and password = '{password}'", strConn)
 
-            If getUser <> "" Then
+            If getUserRole <> "" Then
                 frmHome.Show()
                 Me.Close()
             Else
