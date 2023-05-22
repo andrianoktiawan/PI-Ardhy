@@ -22,6 +22,7 @@ Partial Class frmCreateAccount
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmCreateAccount))
         Me.btnCreate = New System.Windows.Forms.Button()
         Me.lblCreateid = New System.Windows.Forms.Label()
         Me.lblCreateuser = New System.Windows.Forms.Label()
@@ -31,6 +32,9 @@ Partial Class frmCreateAccount
         Me.txtbUser = New System.Windows.Forms.TextBox()
         Me.txtbPassword = New System.Windows.Forms.TextBox()
         Me.txtbRole = New System.Windows.Forms.TextBox()
+        Me.btnBack = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnCreate
@@ -106,12 +110,34 @@ Partial Class frmCreateAccount
         Me.txtbRole.Size = New System.Drawing.Size(234, 20)
         Me.txtbRole.TabIndex = 8
         '
+        'btnBack
+        '
+        Me.btnBack.Location = New System.Drawing.Point(238, 228)
+        Me.btnBack.Name = "btnBack"
+        Me.btnBack.Size = New System.Drawing.Size(75, 23)
+        Me.btnBack.TabIndex = 9
+        Me.btnBack.Text = "Kembali"
+        Me.btnBack.UseVisualStyleBackColor = True
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackgroundImage = CType(resources.GetObject("PictureBox1.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.PictureBox1.Location = New System.Drawing.Point(518, 53)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(244, 250)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 10
+        Me.PictureBox1.TabStop = False
+        '
         'frmCreateAccount
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 14.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Beige
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.btnBack)
         Me.Controls.Add(Me.txtbRole)
         Me.Controls.Add(Me.txtbPassword)
         Me.Controls.Add(Me.txtbUser)
@@ -121,8 +147,11 @@ Partial Class frmCreateAccount
         Me.Controls.Add(Me.lblCreateuser)
         Me.Controls.Add(Me.lblCreateid)
         Me.Controls.Add(Me.btnCreate)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
         Me.Name = "frmCreateAccount"
         Me.Text = "frmCreateAccount"
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -137,4 +166,6 @@ Partial Class frmCreateAccount
     Friend WithEvents txtbUser As TextBox
     Friend WithEvents txtbPassword As TextBox
     Friend WithEvents txtbRole As TextBox
+    Friend WithEvents btnBack As Button
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

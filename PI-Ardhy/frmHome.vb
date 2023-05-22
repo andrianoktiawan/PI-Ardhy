@@ -12,4 +12,27 @@
 
     End Sub
 
+    Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
+        frmLogin.Show()
+        Me.Close()
+    End Sub
+
+    Private Sub txtDate_TextChanged(sender As Object, e As EventArgs) Handles txtDate.TextChanged
+
+    End Sub
+    Private Sub btnStock_Click(sender As Object, e As EventArgs) Handles btnStock.Click
+        Dim frm As New frmStock
+        frm.Show()
+    End Sub
+
+    Private Sub btnCreateaccount_Click(sender As Object, e As EventArgs) Handles btnCreateaccount.Click
+        Dim frm As New frmCreateAccount
+        frm.Show()
+    End Sub
+
+    Private Sub btnLaporan_Click(sender As Object, e As EventArgs) Handles btnLaporan.Click
+        Dim frm As New frmLaporan
+        frm.Show()
+    End Sub
+
 End Class

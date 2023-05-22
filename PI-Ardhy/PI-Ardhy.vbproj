@@ -47,6 +47,9 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>17c5fadbb58d4f1eb861b33467dfb8b2%282%29.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="MySql.Data, Version=6.10.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
@@ -86,6 +89,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BasicModule.vb" />
+    <Compile Include="frmStock.Designer.vb">
+      <DependentUpon>frmStock.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmStock.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLaporan.Designer.vb">
+      <DependentUpon>frmLaporan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmLaporan.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmCreateAccount.Designer.vb">
       <DependentUpon>frmCreateAccount.vb</DependentUpon>
     </Compile>
@@ -123,6 +138,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmStock.resx">
+      <DependentUpon>frmStock.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLaporan.resx">
+      <DependentUpon>frmLaporan.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCreateAccount.resx">
       <DependentUpon>frmCreateAccount.vb</DependentUpon>
     </EmbeddedResource>
@@ -154,6 +175,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\2023-5-21_23-31-00.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="17c5fadbb58d4f1eb861b33467dfb8b2%282%29.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
