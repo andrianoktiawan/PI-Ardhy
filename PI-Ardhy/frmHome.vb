@@ -35,4 +35,7 @@
         frm.Show()
     End Sub
 
+    Private Sub btnTransaksi_Click(sender As Object, e As EventArgs) Handles btnTransaksi.Click
+
+    End Sub
 End Class

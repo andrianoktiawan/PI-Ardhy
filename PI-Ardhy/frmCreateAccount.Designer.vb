@@ -24,11 +24,9 @@ Partial Class frmCreateAccount
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmCreateAccount))
         Me.btnCreate = New System.Windows.Forms.Button()
-        Me.lblCreateid = New System.Windows.Forms.Label()
         Me.lblCreateuser = New System.Windows.Forms.Label()
         Me.lblCreatepw = New System.Windows.Forms.Label()
         Me.lblCreaterole = New System.Windows.Forms.Label()
-        Me.txtbId = New System.Windows.Forms.TextBox()
         Me.txtbUser = New System.Windows.Forms.TextBox()
         Me.txtbPassword = New System.Windows.Forms.TextBox()
         Me.txtbRole = New System.Windows.Forms.TextBox()
@@ -46,19 +44,10 @@ Partial Class frmCreateAccount
         Me.btnCreate.Text = "Create User"
         Me.btnCreate.UseVisualStyleBackColor = True
         '
-        'lblCreateid
-        '
-        Me.lblCreateid.AutoSize = True
-        Me.lblCreateid.Location = New System.Drawing.Point(67, 59)
-        Me.lblCreateid.Name = "lblCreateid"
-        Me.lblCreateid.Size = New System.Drawing.Size(16, 14)
-        Me.lblCreateid.TabIndex = 1
-        Me.lblCreateid.Text = "ID"
-        '
         'lblCreateuser
         '
         Me.lblCreateuser.AutoSize = True
-        Me.lblCreateuser.Location = New System.Drawing.Point(67, 87)
+        Me.lblCreateuser.Location = New System.Drawing.Point(67, 72)
         Me.lblCreateuser.Name = "lblCreateuser"
         Me.lblCreateuser.Size = New System.Drawing.Size(56, 14)
         Me.lblCreateuser.TabIndex = 2
@@ -67,7 +56,7 @@ Partial Class frmCreateAccount
         'lblCreatepw
         '
         Me.lblCreatepw.AutoSize = True
-        Me.lblCreatepw.Location = New System.Drawing.Point(67, 125)
+        Me.lblCreatepw.Location = New System.Drawing.Point(67, 109)
         Me.lblCreatepw.Name = "lblCreatepw"
         Me.lblCreatepw.Size = New System.Drawing.Size(57, 14)
         Me.lblCreatepw.TabIndex = 3
@@ -82,23 +71,16 @@ Partial Class frmCreateAccount
         Me.lblCreaterole.TabIndex = 4
         Me.lblCreaterole.Text = "Role"
         '
-        'txtbId
-        '
-        Me.txtbId.Location = New System.Drawing.Point(146, 53)
-        Me.txtbId.Name = "txtbId"
-        Me.txtbId.Size = New System.Drawing.Size(234, 20)
-        Me.txtbId.TabIndex = 5
-        '
         'txtbUser
         '
-        Me.txtbUser.Location = New System.Drawing.Point(146, 87)
+        Me.txtbUser.Location = New System.Drawing.Point(146, 69)
         Me.txtbUser.Name = "txtbUser"
         Me.txtbUser.Size = New System.Drawing.Size(234, 20)
         Me.txtbUser.TabIndex = 6
         '
         'txtbPassword
         '
-        Me.txtbPassword.Location = New System.Drawing.Point(146, 119)
+        Me.txtbPassword.Location = New System.Drawing.Point(146, 106)
         Me.txtbPassword.Name = "txtbPassword"
         Me.txtbPassword.Size = New System.Drawing.Size(234, 20)
         Me.txtbPassword.TabIndex = 7
@@ -141,11 +123,9 @@ Partial Class frmCreateAccount
         Me.Controls.Add(Me.txtbRole)
         Me.Controls.Add(Me.txtbPassword)
         Me.Controls.Add(Me.txtbUser)
-        Me.Controls.Add(Me.txtbId)
         Me.Controls.Add(Me.lblCreaterole)
         Me.Controls.Add(Me.lblCreatepw)
         Me.Controls.Add(Me.lblCreateuser)
-        Me.Controls.Add(Me.lblCreateid)
         Me.Controls.Add(Me.btnCreate)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
@@ -158,11 +138,9 @@ Partial Class frmCreateAccount
     End Sub
 
     Friend WithEvents btnCreate As Button
-    Friend WithEvents lblCreateid As Label
     Friend WithEvents lblCreateuser As Label
     Friend WithEvents lblCreatepw As Label
     Friend WithEvents lblCreaterole As Label
-    Friend WithEvents txtbId As TextBox
     Friend WithEvents txtbUser As TextBox
     Friend WithEvents txtbPassword As TextBox
     Friend WithEvents txtbRole As TextBox
