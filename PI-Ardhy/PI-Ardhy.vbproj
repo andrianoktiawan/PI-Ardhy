@@ -90,6 +90,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BasicModule.vb" />
+    <Compile Include="frmTransaksi.Designer.vb">
+      <DependentUpon>frmTransaksi.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmTransaksi.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmStock.Designer.vb">
       <DependentUpon>frmStock.vb</DependentUpon>
     </Compile>
@@ -139,6 +145,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmTransaksi.resx">
+      <DependentUpon>frmTransaksi.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmStock.resx">
       <DependentUpon>frmStock.vb</DependentUpon>
     </EmbeddedResource>

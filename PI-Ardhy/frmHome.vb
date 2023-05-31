@@ -36,6 +36,12 @@
     End Sub
 
     Private Sub btnTransaksi_Click(sender As Object, e As EventArgs) Handles btnTransaksi.Click
+        frmTransaksi.Show()
+        Me.Close()
+
+    End Sub
+
+    Private Sub txtRole_TextChanged(sender As Object, e As EventArgs) Handles txtRole.TextChanged
 
     End Sub
 End Class
