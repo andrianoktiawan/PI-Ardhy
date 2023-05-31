@@ -39,4 +39,13 @@
     Private Sub txtUsername_TextChanged(sender As Object, e As EventArgs) Handles txtUsername.TextChanged
 
     End Sub
+
+    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
+        If CheckBox1.Checked = True Then
+            txtPassword.PasswordChar = ""
+
+        Else
+            txtPassword.PasswordChar = "*"
+        End If
+    End Sub
 End Class

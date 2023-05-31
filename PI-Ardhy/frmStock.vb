@@ -1,16 +1,10 @@
 ﻿Public Class frmStock
-    Private Sub frmStock_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim regDate As Date = Date.Now()
-        Dim strDate As String = regDate.ToString("dd-MM-yyyy")
-
-        txtbTanggal.Text = strDate
-    End Sub
-
-    Private Sub txtbTanggal_TextChanged(sender As Object, e As EventArgs) Handles txtbTanggal.TextChanged
+    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
 
     End Sub
 
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        frmHome.Show()
+        Me.Close()
     End Sub
 End Class
