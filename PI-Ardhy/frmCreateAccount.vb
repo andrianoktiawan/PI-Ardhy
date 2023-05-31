@@ -5,6 +5,34 @@
     End Sub
 
     Private Sub btnCreate_Click(sender As Object, e As EventArgs) Handles btnCreate.Click
+        Dim user, password, role As String
+
+        user = txtUser.Text
+        password = txtPassword.Text
+        role = cmbRole.Text
+
+        If isEmpty(user, password, role) = True Then
+            MsgBox("Ada data yang masih kosong!")
+        Else
+            Dim hasil = execQuery($"INSERT INTO user(username, password, role) VALUES ('{user}', '{password}', '{role}');", strConn)
+            If hasil = True Then
+                MsgBox("Berhasil membuat account!")
+            Else
+                MsgBox("Gagal membuat account!")
+            End If
+
+            txtUser.Text = ""
+            txtPassword.Text = ""
+            cmbRole.Text = ""
+        End If
 
     End Sub
+
+    Function isEmpty(user As String, password As String, role As String) As Boolean
+        If user = "" And password = "" And role = "" Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
 End Class

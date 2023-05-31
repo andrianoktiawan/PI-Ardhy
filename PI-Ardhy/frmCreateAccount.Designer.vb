@@ -27,11 +27,11 @@ Partial Class frmCreateAccount
         Me.lblCreateuser = New System.Windows.Forms.Label()
         Me.lblCreatepw = New System.Windows.Forms.Label()
         Me.lblCreaterole = New System.Windows.Forms.Label()
-        Me.txtbUser = New System.Windows.Forms.TextBox()
-        Me.txtbPassword = New System.Windows.Forms.TextBox()
+        Me.txtUser = New System.Windows.Forms.TextBox()
+        Me.txtPassword = New System.Windows.Forms.TextBox()
         Me.btnBack = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.cmbRole = New System.Windows.Forms.ComboBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -71,19 +71,20 @@ Partial Class frmCreateAccount
         Me.lblCreaterole.TabIndex = 4
         Me.lblCreaterole.Text = "Role"
         '
-        'txtbUser
+        'txtUser
         '
-        Me.txtbUser.Location = New System.Drawing.Point(146, 69)
-        Me.txtbUser.Name = "txtbUser"
-        Me.txtbUser.Size = New System.Drawing.Size(234, 20)
-        Me.txtbUser.TabIndex = 6
+        Me.txtUser.Location = New System.Drawing.Point(146, 69)
+        Me.txtUser.Name = "txtUser"
+        Me.txtUser.Size = New System.Drawing.Size(234, 20)
+        Me.txtUser.TabIndex = 6
         '
-        'txtbPassword
+        'txtPassword
         '
-        Me.txtbPassword.Location = New System.Drawing.Point(146, 106)
-        Me.txtbPassword.Name = "txtbPassword"
-        Me.txtbPassword.Size = New System.Drawing.Size(234, 20)
-        Me.txtbPassword.TabIndex = 7
+        Me.txtPassword.Location = New System.Drawing.Point(146, 106)
+        Me.txtPassword.Name = "txtPassword"
+        Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.txtPassword.Size = New System.Drawing.Size(234, 20)
+        Me.txtPassword.TabIndex = 7
         '
         'btnBack
         '
@@ -105,14 +106,14 @@ Partial Class frmCreateAccount
         Me.PictureBox1.TabIndex = 10
         Me.PictureBox1.TabStop = False
         '
-        'ComboBox2
+        'cmbRole
         '
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Items.AddRange(New Object() {"Admin", "Pegawai"})
-        Me.ComboBox2.Location = New System.Drawing.Point(146, 151)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(121, 22)
-        Me.ComboBox2.TabIndex = 12
+        Me.cmbRole.FormattingEnabled = True
+        Me.cmbRole.Items.AddRange(New Object() {"Admin", "Pegawai"})
+        Me.cmbRole.Location = New System.Drawing.Point(146, 151)
+        Me.cmbRole.Name = "cmbRole"
+        Me.cmbRole.Size = New System.Drawing.Size(121, 22)
+        Me.cmbRole.TabIndex = 12
         '
         'frmCreateAccount
         '
@@ -120,11 +121,11 @@ Partial Class frmCreateAccount
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Beige
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.ComboBox2)
+        Me.Controls.Add(Me.cmbRole)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.btnBack)
-        Me.Controls.Add(Me.txtbPassword)
-        Me.Controls.Add(Me.txtbUser)
+        Me.Controls.Add(Me.txtPassword)
+        Me.Controls.Add(Me.txtUser)
         Me.Controls.Add(Me.lblCreaterole)
         Me.Controls.Add(Me.lblCreatepw)
         Me.Controls.Add(Me.lblCreateuser)
@@ -143,9 +144,9 @@ Partial Class frmCreateAccount
     Friend WithEvents lblCreateuser As Label
     Friend WithEvents lblCreatepw As Label
     Friend WithEvents lblCreaterole As Label
-    Friend WithEvents txtbUser As TextBox
-    Friend WithEvents txtbPassword As TextBox
+    Friend WithEvents txtUser As TextBox
+    Friend WithEvents txtPassword As TextBox
     Friend WithEvents btnBack As Button
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents ComboBox2 As ComboBox
+    Friend WithEvents cmbRole As ComboBox
 End Class
