@@ -1,6 +1,6 @@
 ﻿Public Class frmHome
     Private Sub frmHome_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        MsgBox("Welocome Back " & username)
+
 
         lblUser.Text = username
 
@@ -26,8 +26,8 @@
     End Sub
 
     Private Sub btnCreateaccount_Click(sender As Object, e As EventArgs) Handles btnCreateaccount.Click
-        Dim frm As New frmCreateAccount
-        frm.Show()
+        frmCreateAccount.Show()
+        Me.Close()
     End Sub
 
     Private Sub btnLaporan_Click(sender As Object, e As EventArgs) Handles btnLaporan.Click

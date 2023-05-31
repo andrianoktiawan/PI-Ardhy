@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmCreateAccount
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class frmCreateAccount
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmCreateAccount))
         Me.btnCreate = New System.Windows.Forms.Button()
@@ -29,9 +29,9 @@ Partial Class frmCreateAccount
         Me.lblCreaterole = New System.Windows.Forms.Label()
         Me.txtbUser = New System.Windows.Forms.TextBox()
         Me.txtbPassword = New System.Windows.Forms.TextBox()
-        Me.txtbRole = New System.Windows.Forms.TextBox()
         Me.btnBack = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -85,13 +85,6 @@ Partial Class frmCreateAccount
         Me.txtbPassword.Size = New System.Drawing.Size(234, 20)
         Me.txtbPassword.TabIndex = 7
         '
-        'txtbRole
-        '
-        Me.txtbRole.Location = New System.Drawing.Point(146, 148)
-        Me.txtbRole.Name = "txtbRole"
-        Me.txtbRole.Size = New System.Drawing.Size(234, 20)
-        Me.txtbRole.TabIndex = 8
-        '
         'btnBack
         '
         Me.btnBack.Location = New System.Drawing.Point(238, 228)
@@ -112,15 +105,24 @@ Partial Class frmCreateAccount
         Me.PictureBox1.TabIndex = 10
         Me.PictureBox1.TabStop = False
         '
+        'ComboBox2
+        '
+        Me.ComboBox2.FormattingEnabled = True
+        Me.ComboBox2.Items.AddRange(New Object() {"Admin", "Pegawai"})
+        Me.ComboBox2.Location = New System.Drawing.Point(146, 151)
+        Me.ComboBox2.Name = "ComboBox2"
+        Me.ComboBox2.Size = New System.Drawing.Size(121, 22)
+        Me.ComboBox2.TabIndex = 12
+        '
         'frmCreateAccount
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 14.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Beige
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.ComboBox2)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.btnBack)
-        Me.Controls.Add(Me.txtbRole)
         Me.Controls.Add(Me.txtbPassword)
         Me.Controls.Add(Me.txtbUser)
         Me.Controls.Add(Me.lblCreaterole)
@@ -143,7 +145,7 @@ Partial Class frmCreateAccount
     Friend WithEvents lblCreaterole As Label
     Friend WithEvents txtbUser As TextBox
     Friend WithEvents txtbPassword As TextBox
-    Friend WithEvents txtbRole As TextBox
     Friend WithEvents btnBack As Button
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents ComboBox2 As ComboBox
 End Class

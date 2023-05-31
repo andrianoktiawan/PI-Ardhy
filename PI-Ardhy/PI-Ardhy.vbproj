@@ -48,7 +48,8 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>17c5fadbb58d4f1eb861b33467dfb8b2%282%29.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
@@ -174,10 +175,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\2023-5-21_23-31-00.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="17c5fadbb58d4f1eb861b33467dfb8b2%282%29.ico" />
+    <Content Include="Resources\17c5fadbb58d4f1eb861b33467dfb8b2%282%29.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

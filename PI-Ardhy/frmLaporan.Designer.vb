@@ -35,9 +35,9 @@ Partial Class frmLaporan
         '
         'btnPrint
         '
-        Me.btnPrint.Location = New System.Drawing.Point(59, 224)
+        Me.btnPrint.Location = New System.Drawing.Point(86, 176)
         Me.btnPrint.Name = "btnPrint"
-        Me.btnPrint.Size = New System.Drawing.Size(161, 77)
+        Me.btnPrint.Size = New System.Drawing.Size(76, 30)
         Me.btnPrint.TabIndex = 0
         Me.btnPrint.Text = "Print"
         Me.btnPrint.UseVisualStyleBackColor = True

@@ -25,6 +25,7 @@
             If getUserRole <> "" Then
                 frmHome.Show()
                 Me.Close()
+                MsgBox("Welocome Back " & username)
             Else
                 MsgBox("Username atau Password Salah!")
             End If
@@ -32,6 +33,10 @@
             MsgBox("Username & Password tidak boleh kosong!")
         End If
 
+
+    End Sub
+
+    Private Sub txtUsername_TextChanged(sender As Object, e As EventArgs) Handles txtUsername.TextChanged
 
     End Sub
 End Class
