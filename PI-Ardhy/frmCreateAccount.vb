@@ -18,6 +18,7 @@
             If hasil = True Then
                 MsgBox("Berhasil membuat account!")
             Else
+                MsgBox("Username sudah tersedia")
                 MsgBox("Gagal membuat account!")
             End If
 
@@ -29,10 +30,24 @@
     End Sub
 
     Function isEmpty(user As String, password As String, role As String) As Boolean
-        If user = "" And password = "" And role = "" Then
+        If user = "" Or password = "" Or role = "" Then
             Return True
         Else
             Return False
         End If
     End Function
+
+    Private Sub txtPassword_TextChanged(sender As Object, e As EventArgs) Handles txtPassword.TextChanged
+
+    End Sub
+
+    Private Sub btnDeleteA_Click(sender As Object, e As EventArgs) Handles btnDeleteA.Click
+        frmDelete.Show()
+        Me.Close()
+
+    End Sub
+
+    Private Sub cmbRole_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbRole.SelectedIndexChanged
+
+    End Sub
 End Class

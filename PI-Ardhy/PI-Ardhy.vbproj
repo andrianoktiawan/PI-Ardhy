@@ -90,6 +90,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BasicModule.vb" />
+    <Compile Include="frmDelete.Designer.vb">
+      <DependentUpon>frmDelete.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmDelete.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmTransaksi.Designer.vb">
       <DependentUpon>frmTransaksi.vb</DependentUpon>
     </Compile>
@@ -145,6 +151,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmDelete.resx">
+      <DependentUpon>frmDelete.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmTransaksi.resx">
       <DependentUpon>frmTransaksi.vb</DependentUpon>
     </EmbeddedResource>

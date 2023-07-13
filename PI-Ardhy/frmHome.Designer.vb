@@ -40,16 +40,16 @@ Partial Class frmHome
         '
         'btnCreateaccount
         '
-        Me.btnCreateaccount.Location = New System.Drawing.Point(69, 86)
+        Me.btnCreateaccount.Location = New System.Drawing.Point(68, 87)
         Me.btnCreateaccount.Name = "btnCreateaccount"
-        Me.btnCreateaccount.Size = New System.Drawing.Size(194, 44)
+        Me.btnCreateaccount.Size = New System.Drawing.Size(194, 34)
         Me.btnCreateaccount.TabIndex = 0
         Me.btnCreateaccount.Text = "Create Account"
         Me.btnCreateaccount.UseVisualStyleBackColor = True
         '
         'btnTransaksi
         '
-        Me.btnTransaksi.Location = New System.Drawing.Point(69, 136)
+        Me.btnTransaksi.Location = New System.Drawing.Point(68, 127)
         Me.btnTransaksi.Name = "btnTransaksi"
         Me.btnTransaksi.Size = New System.Drawing.Size(194, 37)
         Me.btnTransaksi.TabIndex = 1
@@ -58,7 +58,7 @@ Partial Class frmHome
         '
         'btnStock
         '
-        Me.btnStock.Location = New System.Drawing.Point(68, 221)
+        Me.btnStock.Location = New System.Drawing.Point(67, 212)
         Me.btnStock.Name = "btnStock"
         Me.btnStock.Size = New System.Drawing.Size(195, 39)
         Me.btnStock.TabIndex = 2
@@ -67,7 +67,7 @@ Partial Class frmHome
         '
         'btnLaporan
         '
-        Me.btnLaporan.Location = New System.Drawing.Point(69, 179)
+        Me.btnLaporan.Location = New System.Drawing.Point(68, 170)
         Me.btnLaporan.Name = "btnLaporan"
         Me.btnLaporan.Size = New System.Drawing.Size(194, 36)
         Me.btnLaporan.TabIndex = 4

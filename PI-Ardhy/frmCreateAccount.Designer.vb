@@ -32,12 +32,13 @@ Partial Class frmCreateAccount
         Me.btnBack = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.cmbRole = New System.Windows.Forms.ComboBox()
+        Me.btnDeleteA = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnCreate
         '
-        Me.btnCreate.Location = New System.Drawing.Point(110, 229)
+        Me.btnCreate.Location = New System.Drawing.Point(155, 229)
         Me.btnCreate.Name = "btnCreate"
         Me.btnCreate.Size = New System.Drawing.Size(75, 23)
         Me.btnCreate.TabIndex = 0
@@ -88,7 +89,7 @@ Partial Class frmCreateAccount
         '
         'btnBack
         '
-        Me.btnBack.Location = New System.Drawing.Point(238, 228)
+        Me.btnBack.Location = New System.Drawing.Point(246, 229)
         Me.btnBack.Name = "btnBack"
         Me.btnBack.Size = New System.Drawing.Size(75, 23)
         Me.btnBack.TabIndex = 9
@@ -115,12 +116,22 @@ Partial Class frmCreateAccount
         Me.cmbRole.Size = New System.Drawing.Size(121, 22)
         Me.cmbRole.TabIndex = 12
         '
+        'btnDeleteA
+        '
+        Me.btnDeleteA.Location = New System.Drawing.Point(70, 229)
+        Me.btnDeleteA.Name = "btnDeleteA"
+        Me.btnDeleteA.Size = New System.Drawing.Size(75, 23)
+        Me.btnDeleteA.TabIndex = 13
+        Me.btnDeleteA.Text = "Delete Account"
+        Me.btnDeleteA.UseVisualStyleBackColor = True
+        '
         'frmCreateAccount
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 14.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Beige
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.btnDeleteA)
         Me.Controls.Add(Me.cmbRole)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.btnBack)
@@ -149,4 +160,5 @@ Partial Class frmCreateAccount
     Friend WithEvents btnBack As Button
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents cmbRole As ComboBox
+    Friend WithEvents btnDeleteA As Button
 End Class

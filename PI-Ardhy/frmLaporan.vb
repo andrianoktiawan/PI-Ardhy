@@ -12,6 +12,8 @@
     End Sub
 
     Private Sub btnKembali_Click(sender As Object, e As EventArgs) Handles btnKembali.Click
+        frmHome.Show()
+        Me.Close()
 
     End Sub
 End Class

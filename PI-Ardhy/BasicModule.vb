@@ -51,15 +51,20 @@ Module BasicModule
         Dim connection As New MySqlConnection(conStr)
         Dim cmd As New MySqlCommand("", connection)
         Dim adapter As New MySqlDataAdapter
-        Dim ds As New DataSet
-        If (connection.State = ConnectionState.Open) Then
+
+        Try
+            Dim ds As New DataSet
+            If (connection.State = ConnectionState.Open) Then
+                connection.Close()
+            End If
+            connection.Open()
+            cmd.CommandText = sql
+            cmd.ExecuteNonQuery()
             connection.Close()
-        End If
-        connection.Open()
-        cmd.CommandText = sql
-        cmd.ExecuteNonQuery()
-        connection.Close()
-        Return True
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
     End Function
 
 End Module

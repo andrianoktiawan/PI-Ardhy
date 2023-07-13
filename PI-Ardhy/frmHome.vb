@@ -44,4 +44,10 @@
     Private Sub txtRole_TextChanged(sender As Object, e As EventArgs) Handles txtRole.TextChanged
 
     End Sub
+
+    Private Sub btnDeleteAc_Click(sender As Object, e As EventArgs)
+        frmDelete.Show()
+        Me.Close()
+
+    End Sub
 End Class
