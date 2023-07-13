@@ -23,6 +23,7 @@
     Private Sub btnStock_Click(sender As Object, e As EventArgs) Handles btnStock.Click
         Dim frm As New frmStock
         frm.Show()
+        Me.Close()
     End Sub
 
     Private Sub btnCreateaccount_Click(sender As Object, e As EventArgs) Handles btnCreateaccount.Click

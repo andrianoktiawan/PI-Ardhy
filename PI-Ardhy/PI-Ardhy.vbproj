@@ -90,6 +90,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BasicModule.vb" />
+    <Compile Include="frmAdditem.Designer.vb">
+      <DependentUpon>frmAdditem.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdditem.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmDelete.Designer.vb">
       <DependentUpon>frmDelete.vb</DependentUpon>
     </Compile>
@@ -151,6 +157,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmAdditem.resx">
+      <DependentUpon>frmAdditem.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDelete.resx">
       <DependentUpon>frmDelete.vb</DependentUpon>
     </EmbeddedResource>
