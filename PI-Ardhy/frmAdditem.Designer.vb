@@ -32,6 +32,8 @@ Partial Class frmAdditem
         Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.btnBack = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -116,11 +118,22 @@ Partial Class frmAdditem
         Me.btnBack.Text = "Kembali"
         Me.btnBack.UseVisualStyleBackColor = True
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.PI_Ardhy.My.Resources.Resources._17c5fadbb58d4f1eb861b33467dfb8b2_2_
+        Me.PictureBox1.Location = New System.Drawing.Point(483, 57)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(204, 189)
+        Me.PictureBox1.TabIndex = 10
+        Me.PictureBox1.TabStop = False
+        '
         'frmAdditem
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 14.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.Beige
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.btnBack)
         Me.Controls.Add(Me.btnAdd)
         Me.Controls.Add(Me.TextBox4)
@@ -133,6 +146,7 @@ Partial Class frmAdditem
         Me.Controls.Add(Me.Label1)
         Me.Name = "frmAdditem"
         Me.Text = "Form1"
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -148,4 +162,5 @@ Partial Class frmAdditem
     Friend WithEvents TextBox4 As TextBox
     Friend WithEvents btnAdd As Button
     Friend WithEvents btnBack As Button
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

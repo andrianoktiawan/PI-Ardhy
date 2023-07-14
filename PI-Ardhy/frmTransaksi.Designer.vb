@@ -26,16 +26,16 @@ Partial Class frmTransaksi
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btnBayar = New System.Windows.Forms.Button()
         Me.btnBack = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnTambah = New System.Windows.Forms.Button()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.txtName = New System.Windows.Forms.TextBox()
+        Me.txtDate = New System.Windows.Forms.TextBox()
         Me.Kasir = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
@@ -71,6 +71,11 @@ Partial Class frmTransaksi
         '
         Me.Column3.HeaderText = "Harga"
         Me.Column3.Name = "Column3"
+        '
+        'Column4
+        '
+        Me.Column4.HeaderText = "Quantity"
+        Me.Column4.Name = "Column4"
         '
         'btnBayar
         '
@@ -109,21 +114,21 @@ Partial Class frmTransaksi
         Me.btnTambah.Text = "Tambah"
         Me.btnTambah.UseVisualStyleBackColor = True
         '
-        'TextBox2
+        'txtName
         '
-        Me.TextBox2.Location = New System.Drawing.Point(673, 12)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.ReadOnly = True
-        Me.TextBox2.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox2.TabIndex = 6
+        Me.txtName.Location = New System.Drawing.Point(673, 12)
+        Me.txtName.Name = "txtName"
+        Me.txtName.ReadOnly = True
+        Me.txtName.Size = New System.Drawing.Size(100, 20)
+        Me.txtName.TabIndex = 6
         '
-        'TextBox3
+        'txtDate
         '
-        Me.TextBox3.Location = New System.Drawing.Point(673, 38)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.ReadOnly = True
-        Me.TextBox3.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox3.TabIndex = 7
+        Me.txtDate.Location = New System.Drawing.Point(673, 38)
+        Me.txtDate.Name = "txtDate"
+        Me.txtDate.ReadOnly = True
+        Me.txtDate.Size = New System.Drawing.Size(100, 20)
+        Me.txtDate.TabIndex = 7
         '
         'Kasir
         '
@@ -152,11 +157,6 @@ Partial Class frmTransaksi
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(121, 22)
         Me.ComboBox1.TabIndex = 10
-        '
-        'Column4
-        '
-        Me.Column4.HeaderText = "Quantity"
-        Me.Column4.Name = "Column4"
         '
         'NumericUpDown1
         '
@@ -244,8 +244,8 @@ Partial Class frmTransaksi
         Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Kasir)
-        Me.Controls.Add(Me.TextBox3)
-        Me.Controls.Add(Me.TextBox2)
+        Me.Controls.Add(Me.txtDate)
+        Me.Controls.Add(Me.txtName)
         Me.Controls.Add(Me.btnTambah)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnBack)
@@ -268,8 +268,8 @@ Partial Class frmTransaksi
     Friend WithEvents btnBack As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents btnTambah As Button
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents txtName As TextBox
+    Friend WithEvents txtDate As TextBox
     Friend WithEvents Kasir As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents ComboBox1 As ComboBox

@@ -27,7 +27,9 @@ Partial Class frmDelete
         Me.btnDelete = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtUsernameD = New System.Windows.Forms.TextBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnBack1
@@ -73,12 +75,22 @@ Partial Class frmDelete
         Me.txtUsernameD.Size = New System.Drawing.Size(195, 20)
         Me.txtUsernameD.TabIndex = 4
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.PI_Ardhy.My.Resources.Resources._17c5fadbb58d4f1eb861b33467dfb8b2_2_
+        Me.PictureBox1.Location = New System.Drawing.Point(483, 128)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(202, 186)
+        Me.PictureBox1.TabIndex = 5
+        Me.PictureBox1.TabStop = False
+        '
         'frmDelete
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 14.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Beige
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.txtUsernameD)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnDelete)
@@ -87,6 +99,7 @@ Partial Class frmDelete
         Me.Name = "frmDelete"
         Me.Text = "Form1"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -97,4 +110,5 @@ Partial Class frmDelete
     Friend WithEvents btnDelete As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents txtUsernameD As TextBox
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

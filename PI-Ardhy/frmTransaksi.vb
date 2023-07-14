@@ -24,4 +24,8 @@ Public Class frmTransaksi
     Private Sub DomainUpDown1_SelectedItemChanged(sender As Object, e As EventArgs)
 
     End Sub
+
+    Private Sub txtDate_TextChanged(sender As Object, e As EventArgs) Handles txtDate.TextChanged
+
+    End Sub
 End Class
