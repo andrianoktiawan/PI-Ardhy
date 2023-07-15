@@ -28,4 +28,8 @@ Public Class frmTransaksi
     Private Sub txtDate_TextChanged(sender As Object, e As EventArgs) Handles txtDate.TextChanged
 
     End Sub
+
+    Private Sub Label5_Click(sender As Object, e As EventArgs) Handles txtTunai.Click
+
+    End Sub
 End Class

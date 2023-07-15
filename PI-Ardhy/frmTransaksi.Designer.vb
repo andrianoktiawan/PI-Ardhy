@@ -40,7 +40,7 @@ Partial Class frmTransaksi
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
+        Me.txtTunai = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.TextBox5 = New System.Windows.Forms.TextBox()
@@ -193,15 +193,15 @@ Partial Class frmTransaksi
         Me.Label4.TabIndex = 15
         Me.Label4.Text = "Qty"
         '
-        'Label5
+        'txtTunai
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Times New Roman", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(38, 320)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(60, 22)
-        Me.Label5.TabIndex = 16
-        Me.Label5.Text = "Bayar"
+        Me.txtTunai.AutoSize = True
+        Me.txtTunai.Font = New System.Drawing.Font("Times New Roman", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTunai.Location = New System.Drawing.Point(38, 320)
+        Me.txtTunai.Name = "txtTunai"
+        Me.txtTunai.Size = New System.Drawing.Size(56, 22)
+        Me.txtTunai.TabIndex = 16
+        Me.txtTunai.Text = "Tunai"
         '
         'Label6
         '
@@ -236,7 +236,7 @@ Partial Class frmTransaksi
         Me.Controls.Add(Me.TextBox5)
         Me.Controls.Add(Me.TextBox4)
         Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.txtTunai)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Label3)
@@ -278,7 +278,7 @@ Partial Class frmTransaksi
     Friend WithEvents Label3 As Label
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label4 As Label
-    Friend WithEvents Label5 As Label
+    Friend WithEvents txtTunai As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents TextBox4 As TextBox
     Friend WithEvents TextBox5 As TextBox
