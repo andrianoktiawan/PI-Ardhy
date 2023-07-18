@@ -93,8 +93,10 @@ Public Class frmTransaksi
         TextBox4.Text = formattedValue
 
 
-
-
-
+    End Sub
+    Private Sub TextBox5_TextChanged(sender As Object, e As EventArgs) Handles TextBox5.TextChanged
+        TextBox5.Text = String.Format("{0:#,0}", Convert.ToDouble(TextBox5.Text))
+        TextBox5.SelectionStart = TextBox5.Text.Length
+        TextBox5.SelectionLength = 0
     End Sub
 End Class
