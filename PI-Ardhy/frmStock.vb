@@ -26,4 +26,18 @@ Public Class frmStock
         Me.Close()
 
     End Sub
+
+    Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
+        ' Check if any row is selected
+        If DataGridView1.SelectedRows.Count > 0 Then
+            ' Get the selected row (since MultiSelect is set to False, only one row will be selected)
+            Dim selectedRow As DataGridViewRow = DataGridView1.SelectedRows(0)
+
+            ' Remove the selected row from the DataGridView
+            DataGridView1.Rows.Remove(selectedRow)
+        Else
+            MsgBox("Silahkan pilih item yg ingin dihapus")
+            DataGridView1.Focus()
+        End If
+    End Sub
 End Class
