@@ -127,13 +127,17 @@ Public Class frmTransaksi
             Dim value = DataGridView1.Rows(e.RowIndex).Cells(3).Value
             Dim harga = DataGridView1.Rows(e.RowIndex).Cells(2).Value
             Dim total_baru = value * harga
+            Dim total As Integer
 
             DataGridView1.Rows(e.RowIndex).Cells(4).Value = total_baru
 
+            For i As Integer = 0 To DataGridView1.DataSource.Rows.Count - 1
 
-            Dim total = DataGridView1.DataSource.Rows(0).Item("Total")
+                Dim totalrow As Integer = DataGridView1.DataSource.Rows(i).Item("Total")
+                total += totalrow
+            Next
+
             Dim formattedValue As String = String.Format("{0:C2}", total)
-
             txtTotal.Text = formattedValue
         End If
 
