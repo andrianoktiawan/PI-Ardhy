@@ -34,12 +34,13 @@ Partial Class frmTransaksi
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtTotal = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.txtTunai = New System.Windows.Forms.Label()
+        Me.label10 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.txtKembalian = New System.Windows.Forms.TextBox()
+        Me.txtTunai = New System.Windows.Forms.TextBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -150,13 +151,13 @@ Partial Class frmTransaksi
         Me.Label3.TabIndex = 13
         Me.Label3.Text = "Total"
         '
-        'TextBox1
+        'txtTotal
         '
-        Me.TextBox1.Font = New System.Drawing.Font("Times New Roman", 26.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(133, 362)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(528, 48)
-        Me.TextBox1.TabIndex = 14
+        Me.txtTotal.Font = New System.Drawing.Font("Times New Roman", 26.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTotal.Location = New System.Drawing.Point(133, 362)
+        Me.txtTotal.Name = "txtTotal"
+        Me.txtTotal.Size = New System.Drawing.Size(528, 48)
+        Me.txtTotal.TabIndex = 14
         '
         'Label4
         '
@@ -168,15 +169,15 @@ Partial Class frmTransaksi
         Me.Label4.TabIndex = 15
         Me.Label4.Text = "Qty"
         '
-        'txtTunai
+        'label10
         '
-        Me.txtTunai.AutoSize = True
-        Me.txtTunai.Font = New System.Drawing.Font("Times New Roman", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTunai.Location = New System.Drawing.Point(38, 297)
-        Me.txtTunai.Name = "txtTunai"
-        Me.txtTunai.Size = New System.Drawing.Size(56, 22)
-        Me.txtTunai.TabIndex = 16
-        Me.txtTunai.Text = "Tunai"
+        Me.label10.AutoSize = True
+        Me.label10.Font = New System.Drawing.Font("Times New Roman", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.label10.Location = New System.Drawing.Point(38, 297)
+        Me.label10.Name = "label10"
+        Me.label10.Size = New System.Drawing.Size(56, 22)
+        Me.label10.TabIndex = 16
+        Me.label10.Text = "Tunai"
         '
         'Label6
         '
@@ -188,19 +189,31 @@ Partial Class frmTransaksi
         Me.Label6.TabIndex = 17
         Me.Label6.Text = "Kembalian"
         '
-        'TextBox4
+        'txtKembalian
         '
-        Me.TextBox4.Location = New System.Drawing.Point(567, 306)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(160, 20)
-        Me.TextBox4.TabIndex = 18
+        Me.txtKembalian.Location = New System.Drawing.Point(567, 306)
+        Me.txtKembalian.Name = "txtKembalian"
+        Me.txtKembalian.Size = New System.Drawing.Size(160, 20)
+        Me.txtKembalian.TabIndex = 18
         '
-        'TextBox5
+        'txtTunai
         '
-        Me.TextBox5.Location = New System.Drawing.Point(104, 300)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(151, 20)
-        Me.TextBox5.TabIndex = 19
+        Me.txtTunai.Location = New System.Drawing.Point(193, 300)
+        Me.txtTunai.Name = "txtTunai"
+        Me.txtTunai.Size = New System.Drawing.Size(151, 20)
+        Me.txtTunai.TabIndex = 19
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.Red
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Button1.Location = New System.Drawing.Point(462, 202)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 20
+        Me.Button1.Text = "Delete"
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'frmTransaksi
         '
@@ -208,12 +221,13 @@ Partial Class frmTransaksi
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Beige
         Me.ClientSize = New System.Drawing.Size(800, 418)
-        Me.Controls.Add(Me.TextBox5)
-        Me.Controls.Add(Me.TextBox4)
-        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.txtTunai)
+        Me.Controls.Add(Me.txtKembalian)
+        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.label10)
         Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.txtTotal)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.NumericUpDown1)
         Me.Controls.Add(Me.ComboBox1)
@@ -247,10 +261,11 @@ Partial Class frmTransaksi
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents NumericUpDown1 As NumericUpDown
     Friend WithEvents Label3 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtTotal As TextBox
     Friend WithEvents Label4 As Label
-    Friend WithEvents txtTunai As Label
+    Friend WithEvents label10 As Label
     Friend WithEvents Label6 As Label
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents TextBox5 As TextBox
+    Friend WithEvents txtKembalian As TextBox
+    Friend WithEvents txtTunai As TextBox
+    Friend WithEvents Button1 As Button
 End Class

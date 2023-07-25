@@ -3,9 +3,9 @@
     Private Sub frmLogin_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         strConn = getStrConn()
 
-        testConn = execScalar($"SELECT username FROM user", strConn)
+        testConn = execQuery($"SELECT username FROM user", strConn)
 
-        If testConn <> "" Then
+        If testConn = True Then
             MsgBox("Connection Success")
         Else
             MsgBox("Connection Failed")

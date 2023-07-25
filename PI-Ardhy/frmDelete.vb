@@ -32,14 +32,6 @@ Public Class frmDelete
 
     End Sub
 
-    Function isEmpty(user As String) As Boolean
-        If user = "" Then
-            Return True
-        Else
-            Return False
-        End If
-    End Function
-
     Private Sub frmDelete_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         refresh_dgv()
     End Sub
