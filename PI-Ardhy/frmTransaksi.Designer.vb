@@ -40,7 +40,7 @@ Partial Class frmTransaksi
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txtKembalian = New System.Windows.Forms.TextBox()
         Me.txtTunai = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnDelete = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -203,17 +203,17 @@ Partial Class frmTransaksi
         Me.txtTunai.Size = New System.Drawing.Size(151, 20)
         Me.txtTunai.TabIndex = 19
         '
-        'Button1
+        'btnDelete
         '
-        Me.Button1.BackColor = System.Drawing.Color.Red
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Button1.Location = New System.Drawing.Point(462, 202)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 20
-        Me.Button1.Text = "Delete"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.btnDelete.BackColor = System.Drawing.Color.Red
+        Me.btnDelete.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDelete.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnDelete.Location = New System.Drawing.Point(462, 202)
+        Me.btnDelete.Name = "btnDelete"
+        Me.btnDelete.Size = New System.Drawing.Size(75, 23)
+        Me.btnDelete.TabIndex = 20
+        Me.btnDelete.Text = "Delete"
+        Me.btnDelete.UseVisualStyleBackColor = False
         '
         'frmTransaksi
         '
@@ -221,7 +221,7 @@ Partial Class frmTransaksi
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Beige
         Me.ClientSize = New System.Drawing.Size(800, 418)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnDelete)
         Me.Controls.Add(Me.txtTunai)
         Me.Controls.Add(Me.txtKembalian)
         Me.Controls.Add(Me.Label6)
@@ -267,5 +267,5 @@ Partial Class frmTransaksi
     Friend WithEvents Label6 As Label
     Friend WithEvents txtKembalian As TextBox
     Friend WithEvents txtTunai As TextBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnDelete As Button
 End Class

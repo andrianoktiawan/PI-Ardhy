@@ -26,11 +26,11 @@ Public Class frmTransaksi
     End Sub
 
     Private Sub btnTambah_Click(sender As Object, e As EventArgs) Handles btnTambah.Click
-        Dim test = ComboBox1.SelectedValue
+        Dim kodeBarang = ComboBox1.SelectedValue
         Dim qty As Integer = NumericUpDown1.Value
 
         Dim table As New DataTable()
-        Dim adapter As New MySqlDataAdapter($"SELECT kd_barang as 'Kode Barang', nama_barang as 'Nama Barang', harga_jual as Harga, {qty} as qty, (harga_jual * {qty}) as Total FROM stock where kd_barang = {test}", strConn)
+        Dim adapter As New MySqlDataAdapter($"SELECT kd_barang as 'Kode Barang', nama_barang as 'Nama Barang', harga_jual as Harga, {qty} as qty, (harga_jual * {qty}) as Total FROM stock where kd_barang = {kodeBarang}", strConn)
 
         If qty = 0 Then
             MsgBox("Qty harus lebih dari 0!")
@@ -91,29 +91,77 @@ Public Class frmTransaksi
     End Sub
 
     Private Sub btnBayar_Click(sender As Object, e As EventArgs) Handles btnBayar.Click
-        'Dim bayar = TextBox5.Text
-        Dim total = txtTotal.Text
+        Dim total = txtTotal.Text.Replace("Rp", "").Replace(",00", "")
         Dim bayar = txtTunai.Text
-        Dim kembalian = bayar - total
 
-        Dim formattedValue As String = String.Format("{0:C2}", kembalian)
+        Dim replaceCurrencyTunai = Double.Parse(bayar)
+        Dim replaceCurrencyTotal = Double.Parse(total)
 
-        txtKembalian.Text = formattedValue
+        If DataGridView1.DataSource Is Nothing Then
+            MsgBox("Masukkan kue terlebih dahulu...")
+        Else
+            If bayar <> "" And bayar <> "0" Then
 
+                If ReplaceCurrencyTunai < ReplaceCurrencyTotal Then
+                    MsgBox("Nominal tunai tidak boleh lebih kecil dari total!")
+                    Exit Sub
+                End If
+
+                Dim kembalian = bayar - total
+
+                Dim formattedValue As String = String.Format("{0:C2}", kembalian)
+                txtKembalian.Text = formattedValue
+
+                Dim ds As DataTable = DataGridView1.DataSource
+                Dim conn As New MySqlConnection(strConn)
+                conn.Open()
+
+                For Each row As DataRow In ds.Rows
+                    Dim replaceCurrencyTotalHargaKue = row("total").ToString.Replace(",00", "")
+                    Dim DoubleTotalHargaKue = Double.Parse(replaceCurrencyTotalHargaKue)
+
+                    Dim insertCommand As New MySqlCommand("INSERT INTO orders (order_date, kd_barang, nama_barang, qty, total_harga, tunai, kembalian) 
+                                                            VALUES (now(), @Value2, @Value3, @Value4, @Value5, @Value6, @value7)", conn)
+
+                    ' Set the parameter values from the DataTable's row.
+                    'insertCommand.Parameters.AddWithValue("@Value1", "now()")
+                    insertCommand.Parameters.AddWithValue("@Value2", row("Kode Barang"))
+                    insertCommand.Parameters.AddWithValue("@Value3", row("Nama Barang"))
+                    insertCommand.Parameters.AddWithValue("@Value4", row("qty"))
+                    insertCommand.Parameters.AddWithValue("@Value5", DoubleTotalHargaKue)
+                    insertCommand.Parameters.AddWithValue("@Value6", ReplaceCurrencyTunai)
+                    insertCommand.Parameters.AddWithValue("@Value7", kembalian)
+
+                    Dim hasil = insertCommand.ExecuteNonQuery()
+                Next
+
+                conn.Close()
+
+
+
+
+            Else
+                MsgBox("Nominal Tunai tidak boleh kosong atau 0!")
+            End If
+
+        End If
 
     End Sub
-    'Private Sub txtTunai_TextChanged(sender As Object, e As EventArgs) Handles txtTunai.TextChanged
-    '    TextBox5.Text = String.Format("{0:#,0}", Convert.ToDouble(TextBox5.Text))
-    '    TextBox5.SelectionStart = TextBox5.Text.Length
-    '    TextBox5.SelectionLength = 0
-    'End Sub
+    Private Sub txttunai_textchanged(sender As Object, e As EventArgs) Handles txtTunai.TextChanged
+        Try
+            txtTunai.Text = String.Format("{0:#,0}", Convert.ToDouble(txtTunai.Text))
+            txtTunai.SelectionStart = txtTunai.Text.Length
+            txtTunai.SelectionLength = 0
+        Catch
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        End Try
+    End Sub
+
+    Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
         ' Check if any row is selected
         If DataGridView1.SelectedRows.Count > 0 Then
             ' Get the selected row (since MultiSelect is set to False, only one row will be selected)
             Dim selectedRow As DataGridViewRow = DataGridView1.SelectedRows(0)
-
             ' Remove the selected row from the DataGridView
             DataGridView1.Rows.Remove(selectedRow)
         Else
@@ -141,6 +189,14 @@ Public Class frmTransaksi
             txtTotal.Text = formattedValue
         End If
 
+    End Sub
+
+    Private Sub txtTunai_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtTunai.KeyPress
+        ' Check if the entered character is a digit or control key (e.g., backspace)
+        If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+            ' If it's not a digit or a control key, cancel the key press event
+            e.Handled = True
+        End If
     End Sub
 
 End Class
