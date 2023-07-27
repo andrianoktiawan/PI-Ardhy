@@ -32,9 +32,16 @@ Public Class frmStock
         If DataGridView1.SelectedRows.Count > 0 Then
             ' Get the selected row (since MultiSelect is set to False, only one row will be selected)
             Dim selectedRow As DataGridViewRow = DataGridView1.SelectedRows(0)
+            Dim kd_barang = DataGridView1.Rows(DataGridView1.SelectedRows(0).Index).Cells(0).Value
 
-            ' Remove the selected row from the DataGridView
-            DataGridView1.Rows.Remove(selectedRow)
+            Dim hasil = execQuery($"DELETE FROM STOCK WHERE kd_barang = {kd_barang} ", strConn)
+
+            If hasil = True Then
+                ' Remove the selected row from the DataGridView
+                DataGridView1.Rows.Remove(selectedRow)
+            Else
+                MsgBox("Gagal Hapus Kue...")
+            End If
         Else
             MsgBox("Silahkan pilih item yg ingin dihapus")
             DataGridView1.Focus()
