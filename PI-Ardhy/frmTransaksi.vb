@@ -140,7 +140,6 @@ Public Class frmTransaksi
 
                 conn.Close()
 
-                dim
 
 
 
