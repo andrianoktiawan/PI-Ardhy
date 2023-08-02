@@ -1,4 +1,5 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports Microsoft.Reporting.WinForms
+Imports MySql.Data.MySqlClient
 Imports System.Globalization
 
 Public Class frmTransaksi
@@ -116,31 +117,62 @@ Public Class frmTransaksi
                 conn.Open()
 
                 Dim jumlahJenisKue = ds.Rows.Count
-                Dim isInsertTransaksi = execQuery($"INSERT INTO transaksi (kasir, jumlah_jenis_kue) VALUES ('{username}', {jumlahJenisKue}) ", strConn)
-                Dim id_transaksi = execScalar($"SELECT id FROM transaksi ORDER BY id DESC", strConn)
+                Dim isInsertTransaksi = execQuery($"INSERT INTO transaksi (total_transaksi, tunai, kembalian, kasir, jumlah_jenis_kue, transaksi_date) VALUES ({replaceCurrencyTotal}, {replaceCurrencyTunai}, {kembalian}, '{username}', {jumlahJenisKue}, now()) ", strConn)
+                Dim id_transaksi = execScalar("SELECT id FROM transaksi ORDER BY id DESC", strConn)
+                Dim tgl_transaksi = execScalar($"SELECT transaksi_date FROM transaksi WHERE ID = {id_transaksi}", strConn)
 
                 For Each row As DataRow In ds.Rows
                     Dim replaceCurrencyTotalHargaKue = row("total").ToString.Replace(",00", "")
                     Dim DoubleTotalHargaKue = Double.Parse(replaceCurrencyTotalHargaKue)
 
-                    Dim insertCommand As New MySqlCommand($"INSERT INTO orders (id_transaksi, order_date, kd_barang, nama_barang, qty, total_harga, tunai, kembalian) 
-                                                            VALUES ({id_transaksi}, now(), @Value2, @Value3, @Value4, @Value5, @Value6, @value7)", conn)
+                    Dim insertCommand As New MySqlCommand($"INSERT INTO orders (id_transaksi, kd_barang, nama_barang, qty, total_harga) 
+                                                            VALUES ({id_transaksi}, @Value1, @Value2, @Value3, @Value4)", conn)
 
                     ' Set the parameter values from the DataTable's row.
                     'insertCommand.Parameters.AddWithValue("@Value1", "now()")
-                    insertCommand.Parameters.AddWithValue("@Value2", row("Kode Barang"))
-                    insertCommand.Parameters.AddWithValue("@Value3", row("Nama Barang"))
-                    insertCommand.Parameters.AddWithValue("@Value4", row("qty"))
-                    insertCommand.Parameters.AddWithValue("@Value5", DoubleTotalHargaKue)
-                    insertCommand.Parameters.AddWithValue("@Value6", replaceCurrencyTunai)
-                    insertCommand.Parameters.AddWithValue("@Value7", kembalian)
+                    insertCommand.Parameters.AddWithValue("@Value1", row("Kode Barang"))
+                    insertCommand.Parameters.AddWithValue("@Value2", row("Nama Barang"))
+                    insertCommand.Parameters.AddWithValue("@Value3", row("qty"))
+                    insertCommand.Parameters.AddWithValue("@Value4", DoubleTotalHargaKue)
 
                     Dim hasil = insertCommand.ExecuteNonQuery()
                 Next
 
                 conn.Close()
 
+                Dim query_struk = $"SELECT nama_barang, qty, total_harga from orders where id_transaksi = {id_transaksi}"
 
+                '<------- start Tampilin Report Viewer
+                Dim tbl As New DataTable
+                Dim da As New MySqlDataAdapter(query_struk, strConn)
+                Dim rp1 As ReportParameter = New ReportParameter("ID_TRANSAKSI", id_transaksi)
+
+                da.Fill(tbl)
+
+                If tbl.Rows.Count > 0 And tbl IsNot DBNull.Value Then
+                    frmReportViewer.ReportViewer1.LocalReport.ReportPath = "../../Struk.rdlc"
+                    frmReportViewer.ReportViewer1.LocalReport.DataSources.Clear()
+                    frmReportViewer.ReportViewer1.LocalReport.DataSources.Add(New Microsoft.Reporting.WinForms.ReportDataSource("struk_dataset", tbl))
+
+                    Dim formattedTotal = String.Format("{0:C2}", replaceCurrencyTotal)
+                    Dim formattedTunai As String = String.Format("{0:C2}", Double.Parse(txtTunai.Text))
+                    Dim formattedKembalian As String = txtKembalian.Text
+
+                    Dim parameter(4) As ReportParameter
+                    parameter(0) = New ReportParameter("ID_TRANSAKSI", id_transaksi)
+                    parameter(1) = New ReportParameter("TOTAL", formattedTotal)
+                    parameter(2) = New ReportParameter("TUNAI", formattedTunai)
+                    parameter(3) = New ReportParameter("KEMBALIAN", formattedKembalian)
+                    parameter(4) = New ReportParameter("TANGGAL", tgl_transaksi)
+
+                    frmReportViewer.ReportViewer1.LocalReport.SetParameters(parameter)
+                    frmReportViewer.ReportViewer1.LocalReport.Refresh()
+                    frmReportViewer.ShowDialog()
+                Else
+                    frmReportViewer.ReportViewer1.Reset()
+                    frmReportViewer.ReportViewer1.LocalReport.Refresh()
+                End If
+                'end Tampilin Report Viewer ------->
 
 
 
