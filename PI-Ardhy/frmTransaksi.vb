@@ -94,15 +94,14 @@ Public Class frmTransaksi
         Dim total = txtTotal.Text.Replace("Rp", "").Replace(",00", "")
         Dim bayar = txtTunai.Text
 
-        Dim replaceCurrencyTunai = Double.Parse(bayar)
-        Dim replaceCurrencyTotal = Double.Parse(total)
-
         If DataGridView1.DataSource Is Nothing Then
             MsgBox("Masukkan kue terlebih dahulu...")
         Else
             If bayar <> "" And bayar <> "0" Then
+                Dim replaceCurrencyTunai = Double.Parse(bayar)
+                Dim replaceCurrencyTotal = Double.Parse(total)
 
-                If ReplaceCurrencyTunai < ReplaceCurrencyTotal Then
+                If replaceCurrencyTunai < replaceCurrencyTotal Then
                     MsgBox("Nominal tunai tidak boleh lebih kecil dari total!")
                     Exit Sub
                 End If
@@ -116,12 +115,16 @@ Public Class frmTransaksi
                 Dim conn As New MySqlConnection(strConn)
                 conn.Open()
 
+                Dim jumlahJenisKue = ds.Rows.Count
+                Dim isInsertTransaksi = execQuery($"INSERT INTO transaksi (kasir, jumlah_jenis_kue) VALUES ('{username}', {jumlahJenisKue}) ", strConn)
+                Dim id_transaksi = execScalar($"SELECT id FROM transaksi ORDER BY id DESC", strConn)
+
                 For Each row As DataRow In ds.Rows
                     Dim replaceCurrencyTotalHargaKue = row("total").ToString.Replace(",00", "")
                     Dim DoubleTotalHargaKue = Double.Parse(replaceCurrencyTotalHargaKue)
 
-                    Dim insertCommand As New MySqlCommand("INSERT INTO orders (order_date, kd_barang, nama_barang, qty, total_harga, tunai, kembalian) 
-                                                            VALUES (now(), @Value2, @Value3, @Value4, @Value5, @Value6, @value7)", conn)
+                    Dim insertCommand As New MySqlCommand($"INSERT INTO orders (id_transaksi, order_date, kd_barang, nama_barang, qty, total_harga, tunai, kembalian) 
+                                                            VALUES ({id_transaksi}, now(), @Value2, @Value3, @Value4, @Value5, @Value6, @value7)", conn)
 
                     ' Set the parameter values from the DataTable's row.
                     'insertCommand.Parameters.AddWithValue("@Value1", "now()")
@@ -129,13 +132,15 @@ Public Class frmTransaksi
                     insertCommand.Parameters.AddWithValue("@Value3", row("Nama Barang"))
                     insertCommand.Parameters.AddWithValue("@Value4", row("qty"))
                     insertCommand.Parameters.AddWithValue("@Value5", DoubleTotalHargaKue)
-                    insertCommand.Parameters.AddWithValue("@Value6", ReplaceCurrencyTunai)
+                    insertCommand.Parameters.AddWithValue("@Value6", replaceCurrencyTunai)
                     insertCommand.Parameters.AddWithValue("@Value7", kembalian)
 
                     Dim hasil = insertCommand.ExecuteNonQuery()
                 Next
 
                 conn.Close()
+
+                dim
 
 
 
