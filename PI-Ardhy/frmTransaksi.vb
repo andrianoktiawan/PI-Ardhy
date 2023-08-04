@@ -212,7 +212,7 @@ Public Class frmTransaksi
             ' Remove the selected row from the DataGridView
             DataGridView1.Rows.Remove(selectedRow)
             DataGridView1.Refresh()
-
+            DataGridView1.Invalidate()
         Else
             MsgBox("Silahkan pilih item yg ingin dihapus")
             DataGridView1.Focus()
