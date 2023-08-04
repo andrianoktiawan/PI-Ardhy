@@ -124,18 +124,28 @@ Public Class frmTransaksi
                 For Each row As DataRow In ds.Rows
                     Dim replaceCurrencyTotalHargaKue = row("total").ToString.Replace(",00", "")
                     Dim DoubleTotalHargaKue = Double.Parse(replaceCurrencyTotalHargaKue)
+                    Dim kodeBarang = row("Kode Barang")
+                    Dim qty = row("qty")
+                    Dim stock = execScalar($"SELECT stock FROM stock WHERE kd_barang = {kodeBarang} ", strConn)
 
-                    Dim insertCommand As New MySqlCommand($"INSERT INTO orders (id_transaksi, kd_barang, nama_barang, qty, total_harga) 
+                    Dim updateCommand = execQuery($"UPDATE stock SET stock = {(stock - qty)} WHERE kd_barang = {kodeBarang}", strConn)
+
+                    If updateCommand Then
+
+                        Dim insertCommand As New MySqlCommand($"INSERT INTO orders (id_transaksi, kd_barang, nama_barang, qty, total_harga) 
                                                             VALUES ({id_transaksi}, @Value1, @Value2, @Value3, @Value4)", conn)
 
-                    ' Set the parameter values from the DataTable's row.
-                    'insertCommand.Parameters.AddWithValue("@Value1", "now()")
-                    insertCommand.Parameters.AddWithValue("@Value1", row("Kode Barang"))
-                    insertCommand.Parameters.AddWithValue("@Value2", row("Nama Barang"))
-                    insertCommand.Parameters.AddWithValue("@Value3", row("qty"))
-                    insertCommand.Parameters.AddWithValue("@Value4", DoubleTotalHargaKue)
+                        ' Set the parameter values from the DataTable's row.
+                        'insertCommand.Parameters.AddWithValue("@Value1", "now()")
+                        insertCommand.Parameters.AddWithValue("@Value1", row("Kode Barang"))
+                        insertCommand.Parameters.AddWithValue("@Value2", row("Nama Barang"))
+                        insertCommand.Parameters.AddWithValue("@Value3", row("qty"))
+                        insertCommand.Parameters.AddWithValue("@Value4", DoubleTotalHargaKue)
 
-                    Dim hasil = insertCommand.ExecuteNonQuery()
+                        Dim hasil = insertCommand.ExecuteNonQuery()
+
+                    End If
+
                 Next
 
                 conn.Close()
@@ -175,7 +185,6 @@ Public Class frmTransaksi
                 'end Tampilin Report Viewer ------->
 
 
-
             Else
                 MsgBox("Nominal Tunai tidak boleh kosong atau 0!")
             End If
@@ -200,6 +209,7 @@ Public Class frmTransaksi
             Dim selectedRow As DataGridViewRow = DataGridView1.SelectedRows(0)
             ' Remove the selected row from the DataGridView
             DataGridView1.Rows.Remove(selectedRow)
+
         Else
             MsgBox("Silahkan pilih item yg ingin dihapus")
             DataGridView1.Focus()
