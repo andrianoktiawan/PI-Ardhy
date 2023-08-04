@@ -95,6 +95,9 @@ Public Class frmTransaksi
         Dim total = txtTotal.Text.Replace("Rp", "").Replace(",00", "")
         Dim bayar = txtTunai.Text
 
+        DataGridView1.Refresh()
+        DataGridView1.Invalidate()
+
         If DataGridView1.DataSource Is Nothing Then
             MsgBox("Masukkan kue terlebih dahulu...")
         Else
@@ -209,6 +212,7 @@ Public Class frmTransaksi
             Dim selectedRow As DataGridViewRow = DataGridView1.SelectedRows(0)
             ' Remove the selected row from the DataGridView
             DataGridView1.Rows.Remove(selectedRow)
+            DataGridView1.Refresh()
 
         Else
             MsgBox("Silahkan pilih item yg ingin dihapus")
