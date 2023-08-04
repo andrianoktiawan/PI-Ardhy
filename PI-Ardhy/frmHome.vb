@@ -13,8 +13,14 @@
     End Sub
 
     Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
-        frmLogin.Show()
-        Me.Close()
+        Dim result As DialogResult = MessageBox.Show("Apakah anda Yakin untuk Logout?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+        If result = DialogResult.Yes Then
+            frmLogin.Show()
+            Me.Close()
+        Else
+            Exit Sub
+        End If
     End Sub
 
     Private Sub txtDate_TextChanged(sender As Object, e As EventArgs) Handles txtDate.TextChanged

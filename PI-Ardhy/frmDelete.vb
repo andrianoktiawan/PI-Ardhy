@@ -17,17 +17,23 @@ Public Class frmDelete
 
         username = txtUsernameD.Text
 
+        Dim result As DialogResult = MessageBox.Show($"Apakah anda yakin untuk menghapus {username}?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
-        Dim hasil = execQuery($"DELETE FROM user WHERE username =  ('{username}');", strConn)
-        If hasil = True Then
-            MsgBox("Berhasil menghapus account!")
-            refresh_dgv()
-            DataGridView1.Refresh()
+        If result = DialogResult.Yes Then
+            Dim hasil = execQuery($"DELETE FROM user WHERE username =  ('{username}');", strConn)
+            If hasil = True Then
+                MsgBox("Berhasil menghapus account!")
+                refresh_dgv()
+                DataGridView1.Refresh()
+            Else
+                MsgBox("Gagal menghapus account!")
+            End If
+
+            txtUsernameD.Text = ""
         Else
-            MsgBox("Gagal menghapus account!")
+            Exit Sub
         End If
 
-        txtUsernameD.Text = ""
 
 
     End Sub

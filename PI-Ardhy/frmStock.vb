@@ -28,19 +28,26 @@ Public Class frmStock
     End Sub
 
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
+
         ' Check if any row is selected
         If DataGridView1.SelectedRows.Count > 0 Then
             ' Get the selected row (since MultiSelect is set to False, only one row will be selected)
             Dim selectedRow As DataGridViewRow = DataGridView1.SelectedRows(0)
             Dim kd_barang = DataGridView1.Rows(DataGridView1.SelectedRows(0).Index).Cells(0).Value
 
-            Dim hasil = execQuery($"DELETE FROM STOCK WHERE kd_barang = {kd_barang} ", strConn)
+            Dim result As DialogResult = MessageBox.Show($"apakah anda yakin untuk menghapus kode barang {kd_barang}?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
-            If hasil = True Then
-                ' Remove the selected row from the DataGridView
-                DataGridView1.Rows.Remove(selectedRow)
+            If result = DialogResult.Yes Then
+                Dim hasil = execQuery($"DELETE FROM STOCK WHERE kd_barang = {kd_barang} ", strConn)
+
+                If hasil = True Then
+                    ' Remove the selected row from the DataGridView
+                    DataGridView1.Rows.Remove(selectedRow)
+                Else
+                    MsgBox("Gagal Hapus Kue...")
+                End If
             Else
-                MsgBox("Gagal Hapus Kue...")
+                Exit Sub
             End If
         Else
             MsgBox("Silahkan pilih item yg ingin dihapus")
