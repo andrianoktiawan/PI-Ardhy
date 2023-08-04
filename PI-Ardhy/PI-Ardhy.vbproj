@@ -237,7 +237,7 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Struk.rdlc" />
-    <EmbeddedResource Include="Report2.rdlc" />
+    <EmbeddedResource Include="Laporan.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DataSet_Struk.xsc">

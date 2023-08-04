@@ -12,12 +12,26 @@
   <xs:element name="DataSet_Struk" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet_Struk" msprop:Generator_UserDSName="DataSet_Struk">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="isi_struk" msprop:Generator_TableClassName="isi_strukDataTable" msprop:Generator_TableVarName="tableisi_struk" msprop:Generator_TablePropName="isi_struk" msprop:Generator_RowDeletingName="isi_strukRowDeleting" msprop:Generator_RowChangingName="isi_strukRowChanging" msprop:Generator_RowEvHandlerName="isi_strukRowChangeEventHandler" msprop:Generator_RowDeletedName="isi_strukRowDeleted" msprop:Generator_UserTableName="isi_struk" msprop:Generator_RowChangedName="isi_strukRowChanged" msprop:Generator_RowEvArgName="isi_strukRowChangeEvent" msprop:Generator_RowClassName="isi_strukRow">
+        <xs:element name="isi_struk" msprop:Generator_TableClassName="isi_strukDataTable" msprop:Generator_TableVarName="tableisi_struk" msprop:Generator_RowChangedName="isi_strukRowChanged" msprop:Generator_TablePropName="isi_struk" msprop:Generator_RowDeletingName="isi_strukRowDeleting" msprop:Generator_RowChangingName="isi_strukRowChanging" msprop:Generator_RowEvHandlerName="isi_strukRowChangeEventHandler" msprop:Generator_RowDeletedName="isi_strukRowDeleted" msprop:Generator_RowClassName="isi_strukRow" msprop:Generator_UserTableName="isi_struk" msprop:Generator_RowEvArgName="isi_strukRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="nama_barang" msprop:Generator_ColumnVarNameInTable="columnnama_barang" msprop:Generator_ColumnPropNameInRow="nama_barang" msprop:Generator_ColumnPropNameInTable="nama_barangColumn" msprop:Generator_UserColumnName="nama_barang" type="xs:string" minOccurs="0" />
               <xs:element name="qty" msprop:Generator_ColumnVarNameInTable="columnqty" msprop:Generator_ColumnPropNameInRow="qty" msprop:Generator_ColumnPropNameInTable="qtyColumn" msprop:Generator_UserColumnName="qty" type="xs:string" minOccurs="0" />
               <xs:element name="total_harga" msprop:Generator_ColumnVarNameInTable="columntotal_harga" msprop:Generator_ColumnPropNameInRow="total_harga" msprop:Generator_ColumnPropNameInTable="total_hargaColumn" msprop:Generator_UserColumnName="total_harga" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="laporan" msprop:Generator_TableClassName="laporanDataTable" msprop:Generator_TableVarName="tablelaporan" msprop:Generator_TablePropName="laporan" msprop:Generator_RowDeletingName="laporanRowDeleting" msprop:Generator_RowChangingName="laporanRowChanging" msprop:Generator_RowEvHandlerName="laporanRowChangeEventHandler" msprop:Generator_RowDeletedName="laporanRowDeleted" msprop:Generator_UserTableName="laporan" msprop:Generator_RowChangedName="laporanRowChanged" msprop:Generator_RowEvArgName="laporanRowChangeEvent" msprop:Generator_RowClassName="laporanRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_transaksi" msprop:Generator_ColumnVarNameInTable="columnid_transaksi" msprop:Generator_ColumnPropNameInRow="id_transaksi" msprop:Generator_ColumnPropNameInTable="id_transaksiColumn" msprop:Generator_UserColumnName="id_transaksi" type="xs:string" minOccurs="0" />
+              <xs:element name="nama_barang" msprop:Generator_ColumnVarNameInTable="columnnama_barang" msprop:Generator_ColumnPropNameInRow="nama_barang" msprop:Generator_ColumnPropNameInTable="nama_barangColumn" msprop:Generator_UserColumnName="nama_barang" type="xs:string" minOccurs="0" />
+              <xs:element name="qty" msprop:Generator_ColumnVarNameInTable="columnqty" msprop:Generator_ColumnPropNameInRow="qty" msprop:Generator_ColumnPropNameInTable="qtyColumn" msprop:Generator_UserColumnName="qty" type="xs:string" minOccurs="0" />
+              <xs:element name="total_harga" msprop:Generator_ColumnVarNameInTable="columntotal_harga" msprop:Generator_ColumnPropNameInRow="total_harga" msprop:Generator_ColumnPropNameInTable="total_hargaColumn" msprop:Generator_UserColumnName="total_harga" type="xs:string" minOccurs="0" />
+              <xs:element name="tunai" msprop:Generator_ColumnVarNameInTable="columntunai" msprop:Generator_ColumnPropNameInRow="tunai" msprop:Generator_ColumnPropNameInTable="tunaiColumn" msprop:Generator_UserColumnName="tunai" type="xs:string" minOccurs="0" />
+              <xs:element name="kembalian" msprop:Generator_ColumnVarNameInTable="columnkembalian" msprop:Generator_ColumnPropNameInRow="kembalian" msprop:Generator_ColumnPropNameInTable="kembalianColumn" msprop:Generator_UserColumnName="kembalian" type="xs:string" minOccurs="0" />
+              <xs:element name="kasir" msprop:Generator_ColumnVarNameInTable="columnkasir" msprop:Generator_ColumnPropNameInRow="kasir" msprop:Generator_ColumnPropNameInTable="kasirColumn" msprop:Generator_UserColumnName="kasir" type="xs:string" minOccurs="0" />
+              <xs:element name="transaksi_date" msprop:Generator_ColumnVarNameInTable="columntransaksi_date" msprop:Generator_ColumnPropNameInRow="transaksi_date" msprop:Generator_ColumnPropNameInTable="transaksi_dateColumn" msprop:Generator_UserColumnName="transaksi_date" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

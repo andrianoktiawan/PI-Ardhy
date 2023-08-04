@@ -158,7 +158,6 @@ Public Class frmTransaksi
                 '<------- start Tampilin Report Viewer
                 Dim tbl As New DataTable
                 Dim da As New MySqlDataAdapter(query_struk, strConn)
-                Dim rp1 As ReportParameter = New ReportParameter("ID_TRANSAKSI", id_transaksi)
 
                 da.Fill(tbl)
 
