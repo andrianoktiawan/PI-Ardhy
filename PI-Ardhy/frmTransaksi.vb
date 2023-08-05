@@ -8,6 +8,9 @@ Public Class frmTransaksi
         Me.Close()
     End Sub
     Private Sub frmTransaksi_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        txtName.Text = username
+        txtDate.Text = strDate
+
         Dim table As New DataTable()
         Dim adapter As New MySqlDataAdapter("SELECT kd_barang, nama_barang FROM stock", strConn)
         Dim ds As New DataSet

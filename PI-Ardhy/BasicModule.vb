@@ -3,6 +3,9 @@
 Module BasicModule
     Public strConn, testConn, username, getUserRole As String
 
+    Public regDate As Date = Date.Now()
+    Public strDate As String = regDate.ToString("dd-MM-yyyy")
+
     Public Function getStrConn() As String
         Try
             strConn = "server=127.0.0.1;uid=root;pwd=;database=kasir"
